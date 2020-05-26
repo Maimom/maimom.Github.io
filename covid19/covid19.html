@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script>
+        window.onload = function () {
+
+
+            function addData(data) {
+                for (var i = 0; i < data.statewise.length; i++) {
+                    if (data.statewise[i].state == "Manipur") {
+                        console.log(data.statewise[i].state + ":" + data.statewise[i].active);
+                        var chart = new CanvasJS.Chart("chartContainer", {
+                            theme: "light2", // "light1", "light2", "dark1", "dark2"
+                            exportEnabled: true,
+                            animationEnabled: true,
+                            title: {
+                                text: "Covid19 Status of Manipur"
+                            },
+                            data: [{
+                                type: "pie",
+                                startAngle: 25,
+                                toolTipContent: "<b>{label}</b>: {y}",
+                                showInLegend: "true",
+                                legendText: "{label}",
+                                indexLabelFontSize: 16,
+                                indexLabel: "{label} - {y}",
+                                dataPoints: [
+                                    { y: data.statewise[i].confirmed, label: "Total Confirmed" },
+                                    { y: data.statewise[i].recovered, label: "Recovered" },
+                                    { y: data.statewise[i].active, label: "Active Case" },
+                                    { y: data.statewise[i].deaths, label: "Deaths" },
+
+
+                                ]
+                            }]
+                        });
+                        chart.render();
+
+
+                    }
+                }
+
+            }
+
+            $.getJSON("https://api.covid19india.org/data.json", addData);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+
+</body>
+
+</html>
