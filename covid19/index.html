@@ -8,14 +8,14 @@
 
             function addData(data) {
                 for (var i = 0; i < data.statewise.length; i++) {
-                    if (data.statewise[i].state == "Manipur") {
+                    if (data.statewise[i].statecode == "MN") {
                         console.log(data.statewise[i].state + ":" + data.statewise[i].active);
                         var chart = new CanvasJS.Chart("chartContainer", {
                             theme: "light2", // "light1", "light2", "dark1", "dark2"
                             exportEnabled: true,
                             animationEnabled: true,
                             title: {
-                                text: "Covid19 Status of Manipur"
+                                text: "Covid19 Status of Manipur ; Data source : https://api.covid19india.org"
                             },
                             data: [{
                                 type: "pie",
