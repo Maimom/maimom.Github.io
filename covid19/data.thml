@@ -1,0 +1,7 @@
+<htmL>
+<body>
+[cvct country-code="all" style="style-5" title="Worldwide Covid-19 Cases" label-total="Total" label-deaths="Deaths" label-recovered="Recovered" bg-color="#20202b" font-color="#fff"]
+
+[cvct-tbl layout="layout-1" show="10" bg-color="#20202b" font-color="#ffffff"]
+</body>
+</hmtl>
