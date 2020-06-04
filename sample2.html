@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+
+
+<head>
+
+    <title>Tittle</title>
+
+
+</head>
+
+<body>
+
+
+   
+    <style>
+        #eclt-rsttbleflip {
+            font-family: "Open Sans", sans-serif;
+            bottom: 47px;
+            height: 95px;
+            margin: 10px auto;
+            right: 20px;
+            position: fixed;
+            width: 100px;
+            z-index: 99999;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        #eclt-rsttbleflipdash {
+            -webkit-perspective: 1000;
+            perspective: 1000;
+            -webkit-transform-style: preserve-3d
+        }
+
+        #eclt-rsttbleflipdash {
+            width: 100%;
+            height: 100%;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transition: all 1.0s linear;
+            transition: all 1.0s linear
+        }
+
+        .loadable {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border: 1px solid #ff0808;
+            border-radius: 5px;
+        }
+
+        #election0,
+        #election1 {
+            -moz-box-shadow: 0 0 9px #000;
+            -webkit-box-shadow: 0 0 9px #000;
+            box-shadow: 0 0 9px #000;
+            box-sizing: border-box;
+            padding: 0 0px
+        }
+
+        #eclt-rsttbleflipdash .state-name {
+            font-size: 18px;
+            line-height: 29px;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold
+        }
+
+        #eclt-rsttbleflipdash .result-table-list li:not(:last-child) {
+            margin-bottom: 3px
+        }
+
+        #election0 {
+            background-color: #fff;
+            color: 000;
+            -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+            -webkit-animation: mymoveback 10s infinite;
+            animation: mymoveback 10s infinite
+        }
+
+        #election1 {
+            display: block;
+            box-sizing: border-box;
+            color: 000;
+            background-color: #fff;
+            -webkit-animation: mymove 10s infinite;
+            animation: mymove 10s infinite
+        }
+
+        #election3 {
+            display: block;
+            box-sizing: border-box;
+            color: 000;
+            background-color: #fff;
+            background-color: #fff;
+            color: 000;
+            -webkit-transform: rotateY(-360deg);
+            transform: rotateY(-360deg);
+            -webkit-animation: mymoveback360 10s infinite;
+            animation: mymoveback360 10s infinite
+        }
+
+        .eclt-rsttble .fll-covrge {
+            color: #000;
+            display: block;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .eclt-rsttble a.fll-covrge {
+            text-decoration: none;
+        }
+
+        .fll-covrge span {
+            background: #ff0808;
+            padding: 6px 10px;
+            color: #fff;
+            font-size: 16px;
+            display: block;
+        }
+
+        .fll-covrge ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .fll-covrge ul li {
+            display: block;
+            background: none;
+            padding: 0;
+            line-height: 14px;
+            font-family: 'Lato Regular', sans-serif;
+            font-size: 14px;
+        }
+
+        .fll-covrge ul li span {
+            background: none;
+            display: block;
+            width: 100%;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 5px 0 0 0;
+            color: #000;
+            text-align: center;
+        }
+
+        .eclt-rsttble .fll-covrge small {
+            border: 1px solid #b4353b;
+            padding: 3px 0 1px 7px;
+            text-align: center;
+            font-size: 15px;
+            display: block;
+            max-width: 63px;.eclt-rsttble .fll-covrge {
+            color: #000;
+            display: block;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .eclt-rsttble a.fll-covrge {
+            text-decoration: none;
+        }
+
+        .fll-covrge span {
+            background: #ff0808;
+            padding: 6px 10px;
+            color: #fff;
+            font-size: 16px;
+            display: block;
+        }
+
+        .fll-covrge ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .fll-covrge ul li {
+            display: block;
+            background: none;
+            padding: 0;
+            line-height: 14px;
+            font-family: 'Lato Regular', sans-serif;
+            font-size: 14px;
+        }
+
+        .fll-covrge ul li span {
+            background: none;
+            display: block;
+            width: 100%;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 5px 0 0 0;
+            color: #000;
+            text-align: center;
+        }
+
+        .eclt-rsttble .fll-covrge small {
+            border: 1px solid #b4353b;
+            padding: 3px 0 1px 7px;
+            text-align: center;
+            font-size: 15px;
+            display: block;
+            max-width: 63px;
+            color: #b4353b;
+            margin: 0 auto 5px;
+            position: relative;
+        }
+
+        .eclt-rsttble .fll-covrge small:before {
+            content: "";
+            height: 8px;
+            width: 8px;
+            border-radius: 100%;
+            display: inline-block;
+            background: #af272d;
+            position: absolute;
+            left: 3px;
+            top: 8px;
+        }
+
+            color: #b4353b;
+            margin: 0 auto 5px;
+            position: relative;
+        }
+
+        .eclt-rsttble .fll-covrge small:before {
+            content: "";
+            height: 8px;
+            width: 8px;
+            border-radius: 100%;
+            display: inline-block;
+            background: #af272d;
+            position: absolute;
+            left: 3px;
+            top: 8px;
+        }
+
+        @-webkit-keyframes mymove {
+            40% {
+                -webkit-transform: rotateY(0deg)
+            }
+
+            50% {
+                -webkit-transform: rotateY(180deg)
+            }
+
+            90% {
+                -webkit-transform: rotateY(180deg)
+            }
+
+            100% {
+                -webkit-transform: rotateY(0deg)
+            }
+        }
+
+        @-webkit-keyframes mymoveback {
+            40% {
+                -webkit-transform: rotateY(-180deg)
+            }
+
+            50% {
+                -webkit-transform: rotateY(0deg)
+            }
+
+            90% {
+                -webkit-transform: rotateY(0deg)
+            }
+
+            100% {
+                -webkit-transform: rotateY(-180deg)
+            }
+        }
+
+        @-webkit-keyframes mymoveback360 {
+            40% {
+                transform: rotateY(-360deg)
+            }
+
+            50% {
+                transform: rotateY(0deg)
+            }
+
+            90% {
+                transform: rotateY(0deg)
+            }
+
+            100% {
+                transform: rotateY(-360deg)
+            }
+        }
+
+        @keyframes mymove {
+            40% {
+                transform: rotateY(0deg)
+            }
+
+            50% {
+                transform: rotateY(180deg)
+            }
+
+            90% {
+                transform: rotateY(180deg)
+            }
+
+            100% {
+                transform: rotateY(0deg)
+            }
+        }
+    </style>
+
+    <div class="clearfix" id="corona-div" style="display:none;">
+        <div id="eclt-rsttbleflip" class="eclt-rsttble" style="display:none;">
+            <div id="eclt-rsttbleflipdash" class="shadow">
+            </div>
+        </div>
+    </div>
+
+    <!--Don't delete-->
+    <script>
+        function getCookieCorona(name) { var nameEQ = name + "="; var ca = document.cookie.split(";"); for (var i = 0; i < ca.length; i++) { var c = ca[i]; while (c.charAt(0) == " ") { c = c.substring(1, c.length); } if (c.indexOf(nameEQ) == 0) { return c.substring(nameEQ.length, c.length); } } return null; }
+        function setCookieCorona(cname, cvalue, exdays) { var d = new Date; d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000); var expires = "expires=" + d.toUTCString(); document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"; }
+        var corona = getCookieCorona("corona");
+        if (corona) {
+            document.getElementById("corona-div").style.display = "none";
+        } else {
+            document.getElementById("corona-div").style.display = "block";
+            getHTTPRequestCorona("https://www.livemint.com/feed-elections/5m/coronavirus.json", "eclt-rsttbleflipdash", true);
+        }
+        function getFirstKey(obj) {
+            for (key in obj) {
+                return key;
+            }
+        }
+
+        function hideCross() {
+            document.getElementById("corona-div").style.display = "none";
+            if (typeof setCookieCorona !== 'undefined') {
+                setCookie("corona", "true", 1);
+            }
+        }
+        function getHTTPRequestCorona(url, id, json) {
+            var xhttp = new XMLHttpRequest;
+            if (json == true) {
+                xhttp.responseType = "json";
+            }
+            xhttp.open("GET", url, true);
+            xhttp.send();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    var objResponse = xhttp.response;
+                    var flipText = "";
+                    if (objResponse.data_eng != null && objResponse.data_eng !== undefined && objResponse.data_eng != '') {
+                        [].forEach.call(objResponse.data_eng, function (el, i) {
+                            flipText = flipText + '<div class="widget-inner loadable" id="election' + i + '"><div class="crossbutton" onClick = "hideCross();"></div><a class="fll-covrge" href ="https://maimom.github.io/covid19/"><span>COVID-19</span><ul id="t' + (i + 1) + '"><li><span>' + getFirstKey(el) + '</span><span>' + el[getFirstKey(el)] + '</span></li></ul></a></div>';
+                        });
+
+                    }
+                    document.getElementById("eclt-rsttbleflip").style.display = "block";
+                    document.getElementById('eclt-rsttbleflipdash').innerHTML = flipText;
+                }
+            }
+        } 
+    </script>
+    <!--Don't delete-->
+</body>
+
+</html>
